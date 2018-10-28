@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 def iris_type(s):
-    it = {'Iris-setosa': 0, 'Iris-versicolor': 1, 'Iris-virginica': 2}
+    it = {b'Iris-setosa': 0, b'Iris-versicolor': 1, b'Iris-virginica': 2}
     return it[s]
 
 # 'sepal length', 'sepal width', 'petal length', 'petal width'
@@ -45,9 +45,9 @@ if __name__ == "__main__":
         y_hat = rf_clf.predict(x)
         y = y.reshape(-1)
         c = np.count_nonzero(y_hat == y)    # 统计预测正确的个数
-        print '特征：  ', iris_feature[pair[0]], ' + ', iris_feature[pair[1]],
-        print '\t预测正确数目：', c,
-        print '\t准确率: %.2f%%' % (100 * float(c) / float(len(y)))
+        print('特征：  ', iris_feature[pair[0]], ' + ', iris_feature[pair[1]])
+        print('\t预测正确数目：', c,)
+        print('\t准确率: %.2f%%' % (100 * float(c) / float(len(y))))
 
         # 显示
         cm_light = mpl.colors.ListedColormap(['#A0FFA0', '#FFA0A0', '#A0A0FF'])

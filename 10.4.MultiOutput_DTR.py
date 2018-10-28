@@ -22,9 +22,9 @@ if __name__ == "__main__":
     dt = reg.fit(x, y)
 
     x_test = np.linspace(-4, 4, num=1000).reshape(-1, 1)
-    print x_test
+    print(x_test)
     y_hat = dt.predict(x_test)
-    print y_hat
+    print(y_hat)
     plt.scatter(y[:, 0], y[:, 1], c='r', s=40, label='Actual')
     plt.scatter(y_hat[:, 0], y_hat[:, 1], c='g', marker='s', s=100, label='Depth=%d' % deep, alpha=1)
     plt.legend(loc='upper left')
